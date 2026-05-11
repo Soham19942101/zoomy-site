@@ -448,7 +448,7 @@
 
   <nav>
     <img class="nav-logo" src="assets/images/logo.svg" alt="Zoomy" />
-    <button class="btn-watch" onclick="document.getElementById('email-section').scrollIntoView({behavior:'smooth'})">
+    <button class="btn-watch" onclick="document.getElementById('video-modal').style.display='flex';document.getElementById('demo-video').play();">
       <span class="play-ring">
         <svg width="9" height="10" viewBox="0 0 9 10" fill="white"><polygon points="1,1 8,5 1,9"/></svg>
       </span>
@@ -525,7 +525,7 @@
   <section class="cta-section">
     <h2 class="fade-up">Stop thinking about returns.</h2>
     <div class="cta-btns fade-up d1">
-      <button class="btn-white-solid" style="display:inline-flex;align-items:center;gap:10px;">
+      <button class="btn-white-solid" onclick="document.getElementById('video-modal').style.display='flex';document.getElementById('demo-video').play();" style="display:inline-flex;align-items:center;gap:10px;">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><polygon points="3,2 13,8 3,14"/></svg>
         Watch Demo
       </button>
@@ -554,6 +554,13 @@
       });
     });
   </script>
+
+<div id="video-modal" onclick="if(event.target===this){document.getElementById('video-modal').style.display='none';document.getElementById('demo-video').pause();}" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.95);z-index:999;align-items:center;justify-content:center;backdrop-filter:blur(12px);">
+  <div style="position:relative;width:92%;max-width:1100px;border-radius:24px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,0.15);background:#fff;">
+    <button onclick="document.getElementById('video-modal').style.display='none';document.getElementById('demo-video').pause();" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.08);border:none;color:#333;font-size:20px;cursor:pointer;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10;">✕</button>
+    <video id="demo-video" controls style="width:100%;display:block;max-height:80vh;background:#fff;" src="assets/video/Zoomy video Vol-final.mp4"></video>
+  </div>
+</div>
 
 </body>
 </html>
