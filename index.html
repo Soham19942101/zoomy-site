@@ -120,7 +120,7 @@
     }
 
     .section-h2 {
-      font-size: clamp(32px, 4vw, 54px);
+      font-size: clamp(28px, 4vw, 54px);
       font-weight: 600;
       line-height: 1.07;
       color: var(--black);
@@ -131,12 +131,13 @@
     .section-h2 em { color: var(--purple); font-style: normal; }
 
     .section-sub {
-      font-size: clamp(16px, 1.6vw, 19px);
+      font-size: clamp(15px, 1.6vw, 19px);
       font-weight: 400;
       color: var(--mid);
       line-height: 1.65;
       margin: 0 auto 52px;
       text-align: center;
+      padding: 0 16px;
     }
 
     .gif-frame {
@@ -155,25 +156,26 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 240px 24px 80px;
+      padding: 160px 24px 80px;
     }
 
     .hero h1 {
       font-size: clamp(36px, 7.5vw, 80px);
       font-weight: 600;
-      line-height: 1.06;
-      letter-spacing: -0.042em;
+      line-height: 1.08;
+      letter-spacing: -0.038em;
       color: var(--black);
       margin-bottom: 28px;
     }
     .hero h1 .purple { color: var(--purple); }
 
     .hero__desc {
-      font-size: clamp(20px, 2.2vw, 24px);
+      font-size: clamp(17px, 2.2vw, 24px);
       font-weight: 400;
       color: var(--mid);
       line-height: 1.65;
       margin: 0 auto 56px;
+      padding: 0 8px;
     }
 
     .feat-strip {
@@ -210,7 +212,7 @@
       overflow: hidden;
     }
     .cta-section h2 {
-      font-size: clamp(32px, 4.5vw, 60px);
+      font-size: clamp(28px, 4.5vw, 60px);
       font-weight: 600;
       color: var(--white);
       margin-bottom: 40px;
@@ -271,18 +273,93 @@
 
     .footer-copy { font-size: 13px; color: #000000; font-weight: 500; }
 
+    @media (min-width: 1600px) {
+      .wrap { max-width: 1400px; }
+      .hero h1 { font-size: 96px; }
+      .section-h2 { font-size: 64px; }
+      .hero__desc { font-size: 26px; }
+      .section-sub { font-size: 24px; }
+
+    }
+
+    /* ── Tablet ── */
+    @media (max-width: 1024px) {
+      .hero { padding: 140px 32px 72px; }
+      .email-section, .returns-section, .pickup-section, .money-section { padding: 72px 0; }
+      .cta-section { padding: 100px 32px; }
+    }
+
+    /* ── Mobile ── */
     @media (max-width: 767px) {
-      .hero { padding: 120px 20px 40px; }
-      nav { padding: 0 20px; }
-      .email-section, .returns-section, .pickup-section, .money-section { padding: 60px 0; }
-      footer { padding: 24px 20px; flex-direction: column; align-items: center; text-align: center; }
-      .nav-logo { height: 30px; }
-      .hero__desc { white-space: normal; }
-      .feat-strip { flex-direction: column; border-radius: 20px; width: 100%; max-width: 280px; }
-      .feat-sep { width: 100%; height: 1px; }
-      .cta-section { padding: 80px 20px; }
-      .btn-white-solid, .btn-dark-solid { padding: 15px 28px; font-size: 15px; }
-      .section-sub { padding: 0 16px; }
+      nav { padding: 0 16px; height: 60px; }
+      .nav-logo { height: 28px; }
+      .btn-watch { padding: 10px 16px; font-size: 13px; gap: 8px; }
+      .play-ring { width: 20px; height: 20px; }
+
+      .hero {
+        padding: 110px 20px 56px;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 9vw, 52px);
+        margin-bottom: 20px;
+      }
+
+      .hero__desc {
+        font-size: 16px;
+        margin-bottom: 36px;
+      }
+
+      .feat-strip {
+        flex-direction: column;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 260px;
+        gap: 0;
+        padding: 4px;
+      }
+      .feat-sep { width: 100%; height: 1px; margin: 0; }
+      .feat-pill { justify-content: center; padding: 11px 16px; font-size: 14px; }
+
+      .email-section, .returns-section, .pickup-section, .money-section { padding: 56px 0; }
+
+      .section-h2 { font-size: clamp(24px, 7vw, 36px); margin-bottom: 16px; }
+      .section-sub { font-size: 15px; margin-bottom: 32px; }
+      .section-tag { font-size: 11px; padding: 5px 12px; margin-bottom: 14px; }
+
+      .gif-frame { border-radius: 16px; }
+
+      .cta-section { padding: 72px 20px; }
+      .cta-section h2 { font-size: clamp(24px, 7vw, 36px); margin-bottom: 28px; }
+
+      .btn-white-solid, .btn-dark-solid {
+        padding: 14px 24px;
+        font-size: 15px;
+        width: auto;
+      }
+
+      .cta-btns-wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px !important;
+      }
+
+      footer {
+        padding: 24px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .footer-logo { width: 80px; }
+      .footer-copy { font-size: 12px; }
+    }
+
+    /* ── Small mobile ── */
+    @media (max-width: 390px) {
+      .hero h1 { font-size: clamp(30px, 9vw, 42px); }
+      .hero__desc { font-size: 15px; }
+      .btn-watch { padding: 9px 14px; font-size: 12px; }
     }
   </style>
 </head>
@@ -370,10 +447,8 @@
 
   <section class="cta-section">
     <h2 class="fade-up">Stop thinking about returns.</h2>
-    <div class="fade-up d1" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <button class="btn-dark-solid">
-        Connect your email
-      </button>
+    <div class="cta-btns-wrap fade-up d1" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-dark-solid">Connect your email</button>
       <button class="btn-white-solid" onclick="document.getElementById('video-modal').style.display='flex';document.getElementById('demo-video').play();">
         <span style="width:24px;height:24px;border-radius:50%;border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
           <svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="1,1 8,5 1,9"/></svg>
