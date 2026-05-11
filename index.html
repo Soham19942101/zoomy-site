@@ -120,15 +120,24 @@
     }
 
     .section-h2 {
-        font-size: clamp(32px, 4vw, 54px);
-        font-weight: 600;
-        line-height: 1.07;
-        color: var(--black);
-        margin-bottom: 60px;
-        letter-spacing: -0.038em;
-        text-align: center;
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 600;
+      line-height: 1.07;
+      color: var(--black);
+      margin-bottom: 20px;
+      letter-spacing: -0.038em;
+      text-align: center;
     }
     .section-h2 em { color: var(--purple); font-style: normal; }
+
+    .section-sub {
+      font-size: clamp(16px, 1.6vw, 19px);
+      font-weight: 400;
+      color: var(--mid);
+      line-height: 1.65;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
 
     .gif-frame {
       border-radius: 26px;
@@ -150,21 +159,20 @@
     }
 
     .hero h1 {
-      font-size: clamp(36px, 6vw, 72px);
+      font-size: clamp(36px, 7.5vw, 80px);
       font-weight: 600;
-      line-height: 1.08;
-      letter-spacing: -0.038em;
+      line-height: 1.06;
+      letter-spacing: -0.042em;
       color: var(--black);
       margin-bottom: 28px;
     }
     .hero h1 .purple { color: var(--purple); }
 
     .hero__desc {
-      font-size: clamp(20px, 2.2vw, 26px);
+      font-size: clamp(20px, 2.2vw, 24px);
       font-weight: 400;
       color: var(--mid);
       line-height: 1.65;
-      max-width: 700px;
       margin: 0 auto 56px;
     }
 
@@ -202,11 +210,11 @@
       overflow: hidden;
     }
     .cta-section h2 {
-        font-size: clamp(32px, 4.5vw, 60px);
-        font-weight: 600;
-        color: var(--white);
-        margin-bottom: 40px;
-        position: relative;
+      font-size: clamp(32px, 4.5vw, 60px);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 40px;
+      position: relative;
     }
 
     .btn-white-solid {
@@ -224,6 +232,20 @@
     }
     .btn-white-solid:hover { transform: translateY(-2px); }
 
+    .btn-dark-solid {
+      background: rgba(0,0,0,0.35);
+      color: rgba(255,255,255,0.45);
+      border-radius: 100px;
+      padding: 18px 36px;
+      font-size: 16px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: default;
+      border: 1.5px solid rgba(255,255,255,0.12);
+    }
+
     footer {
       padding: 24px 24px;
       display: flex;
@@ -236,7 +258,7 @@
     }
 
     .footer-logo { width: 100px; height: auto; display: block; }
-    
+
     .footer-link-item {
       display: flex;
       align-items: center;
@@ -245,28 +267,22 @@
       font-size: 13px;
       font-weight: 500;
     }
-
-    .footer-link-item svg {
-      width: 20px;
-      height: 20px;
-      stroke: #000000;
-    }
+    .footer-link-item svg { width: 20px; height: 20px; stroke: #000000; }
 
     .footer-copy { font-size: 13px; color: #000000; font-weight: 500; }
 
     @media (max-width: 767px) {
-      .hero {
-        padding: 120px 20px 40px;
-    }
-      nav, footer { padding: 0 20px; }
-      .email-section, .returns-section, .pickup-section, .money-section { 
-          padding: 60px 0; 
-      }
+      .hero { padding: 120px 20px 40px; }
+      nav { padding: 0 20px; }
+      .email-section, .returns-section, .pickup-section, .money-section { padding: 60px 0; }
       footer { padding: 24px 20px; flex-direction: column; align-items: center; text-align: center; }
       .nav-logo { height: 30px; }
       .hero__desc { white-space: normal; }
       .feat-strip { flex-direction: column; border-radius: 20px; width: 100%; max-width: 280px; }
       .feat-sep { width: 100%; height: 1px; }
+      .cta-section { padding: 80px 20px; }
+      .btn-white-solid, .btn-dark-solid { padding: 15px 28px; font-size: 15px; }
+      .section-sub { padding: 0 16px; }
     }
   </style>
 </head>
@@ -312,6 +328,7 @@
     <div class="wrap" style="text-align:center;">
       <div class="section-tag fade-up"><span>✦</span> Email</div>
       <h2 class="section-h2 fade-up d1">Simply connect your <em>email.</em></h2>
+      <p class="section-sub fade-up d2">Zoomy finds your order confirmation instantly — we never see your password.</p>
       <div class="gif-frame scale-up d3">
         <img src="assets/images/email.gif" alt="Connect your email" />
       </div>
@@ -320,8 +337,9 @@
 
   <section class="returns-section">
     <div class="wrap" style="text-align:center;">
-      <div class="section-tag fade-up"><span>✦</span> PICKUP</div>
+      <div class="section-tag fade-up"><span>✦</span> RETURNS</div>
       <h2 class="section-h2 fade-up d1">All your returns, <em>in one place.</em></h2>
+      <p class="section-sub fade-up d2">Confirm what you're returning, see return window, and schedule a pickup — all from one screen.</p>
       <div class="gif-frame scale-up d3">
         <img src="assets/images/confirm-returns.png" alt="All your returns in one place" />
       </div>
@@ -332,6 +350,7 @@
     <div class="wrap" style="text-align:center;">
       <div class="section-tag fade-up"><span>✦</span> Pickup</div>
       <h2 class="section-h2 fade-up d1">Pick a time, Zoomy <em>comes to you.</em></h2>
+      <p class="section-sub fade-up d2">No labels. No drop-offs. Just hand them to the driver at your door.</p>
       <div class="gif-frame scale-up d3">
         <img src="assets/images/pickup.gif" alt="Pickup scheduling" />
       </div>
@@ -342,6 +361,7 @@
     <div class="wrap">
       <div class="section-tag fade-up"><span>✦</span> Refunds</div>
       <h2 class="section-h2 fade-up d1">Always know <em>where</em> your money is.</h2>
+      <p class="section-sub fade-up d2">Track every refund in real time — from return received to money back in your account.</p>
       <div class="gif-frame scale-up d1">
         <img src="assets/images/money saved.gif" alt="Refund tracking" />
       </div>
@@ -350,7 +370,10 @@
 
   <section class="cta-section">
     <h2 class="fade-up">Stop thinking about returns.</h2>
-    <div class="cta-btns fade-up d1" style="display: flex; justify-content: center;">
+    <div class="fade-up d1" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-dark-solid">
+        Connect your email
+      </button>
       <button class="btn-white-solid" onclick="document.getElementById('video-modal').style.display='flex';document.getElementById('demo-video').play();">
         <span style="width:24px;height:24px;border-radius:50%;border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
           <svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="1,1 8,5 1,9"/></svg>
@@ -388,7 +411,7 @@
 
   <div id="video-modal" onclick="if(event.target===this){this.style.display='none';document.getElementById('demo-video').pause();}" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.95);z-index:999;align-items:center;justify-content:center;backdrop-filter:blur(12px);">
     <div style="position:relative;width:92%;max-width:1100px;border-radius:24px;overflow:hidden;background:#fff;">
-      <button onclick="document.getElementById('video-modal').style.display='none';document.getElementById('demo-video').pause();" style="position:absolute;top:16px;right:16px;width:40px;height:40px;background:rgba(0,0,0,0.08);border-radius:50%;z-index:10;">✕</button>
+      <button onclick="document.getElementById('video-modal').style.display='none';document.getElementById('demo-video').pause();" style="position:absolute;top:16px;right:16px;width:40px;height:40px;background:rgba(0,0,0,0.08);border-radius:50%;z-index:10;font-size:18px;display:flex;align-items:center;justify-content:center;color:#333;">✕</button>
       <video id="demo-video" controls style="width:100%;display:block;max-height:100vh;" src="assets/video/Zoomy video Vol-final.mp4"></video>
     </div>
   </div>
