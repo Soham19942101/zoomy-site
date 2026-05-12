@@ -292,7 +292,7 @@
     /* ── Mobile ── */
     @media (max-width: 767px) {
       nav { padding: 0 16px; height: 60px; }
-      .nav-logo { height: 28px; }
+      .nav-logo { height: 24px; }
       .btn-watch {  padding: 8px 14px; font-size: 12px; gap: 8px; }
       .play-ring { width: 18px; height: 18px; }
 
@@ -351,16 +351,23 @@
           padding: 0 12px;
           gap: 6px;
           white-space: nowrap;
+          justify-content: center;
+          align-items: center;
         }
 
         .btn-white-solid span {
           width: 18px !important;
           height: 18px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          flex-shrink: 0;
         }
 
         .btn-white-solid svg {
           width: 7px;
           height: 8px;
+          margin: auto;
         }
 
       footer {
