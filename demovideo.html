@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html,body{
+  margin:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  overflow:hidden;
+  font-family:Arial,sans-serif;
+}
+
+.video-wrap{
+  position:relative;
+  width:100%;
+  height:100vh;
+}
+
+video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#000;
+}
+
+.tap-btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:1000;
+
+  width:110px;
+  height:110px;
+
+  border:none;
+  border-radius:50%;
+
+  background:rgba(0,0,0,0.65);
+  backdrop-filter:blur(10px);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+}
+
+.tap-btn svg{
+  width:42px;
+  height:42px;
+  fill:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="video-wrap">
+
+<video id="video" muted playsinline controls>
+  <source src="https://zoomyreturns.com/zoomydemo.mp4" type="video/mp4">
+</video>
+
+<button class="tap-btn" onclick="startVideo()">
+
+<svg viewBox="0 0 24 24">
+<path d="M8 5v14l11-7z"/>
+</svg>
+
+</button>
+
+</div>
+
+<script>
+function startVideo(){
+
+  const video = document.getElementById('video');
+
+  video.muted = false;
+  video.play();
+
+  document.querySelector('.tap-btn').style.display = 'none';
+
+}
+</script>
+
+</body>
+</html>
